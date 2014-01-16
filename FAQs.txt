@@ -1,0 +1,3 @@
+Error In installation?
+========================
+If you got 500 server error, open .htaccess file and remove the following string "Options +FollowSymLinks"
