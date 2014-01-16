@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://labs.buddyexpress.net/bdesk/1.0">
+    <com_name>Search</com_name>
+	<com_author>Buddyexpress Team</com_author>
+	<com_description>Enable article search.</com_description>
+	<com_license>Buddyexpress Public Licence 1.1</com_license>
+	<com_licence_url></com_licence_url>
+	<com_version>1.0</com_version>
+</component>
