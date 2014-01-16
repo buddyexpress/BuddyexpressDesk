@@ -1,0 +1,292 @@
+/**
+ * Buddyexpress Desk
+ *
+ * @package   Bdesk
+ * @author    Buddyexpress Core Team <admin@buddyexpress.net
+ * @copyright 2014 BUDDYEXPRESS NETWORKS.
+ * @license   Buddyexpress Public License http://www.buddyexpress.net/Licences/bpl/ 
+ * @link      http://labs.buddyexpress.net/bdesk.b
+*/
+body {
+padding-bottom: 10px;
+position: relative;
+z-index: 2;
+background: none repeat scroll 0 0;
+line-height:1.5;
+   font-family: 'PT Sans', sans-serif;
+color:#000;
+background:#F7F7F7;
+font-size:10pt;
+margin:0;
+}
+.buddyexpressdesk-topbar {
+    border-bottom: 2px solid #999;
+    background:#333 url('./../images/topbar.jpg') repeat-x;
+	height:75px;
+	left:0;
+	right:0;
+}
+.buddyexpressdesk-topbar .inner {
+   width: 1000px;
+   margin: 0 auto;	
+   padding-top: 4px;
+}
+.footer {
+	width: 950px;
+margin: 10px auto;
+font-weight: bold;
+}
+.footer a{
+	color:#428BCA;
+	text-decoration:none;
+}
+.buddyexpressdesk-topbar .links{
+float: right;
+margin-top: -50px;
+color: #FFF;
+font-weight: bold;
+margin-right: 20px;	
+}
+.buddyexpress-desk-logo {
+	background:url('./../images/bdesk.png') no-repeat;
+	width:265px;
+	height:65px;
+	border-right: 1px solid #FFF;
+}
+.buddyexpressdesk-topmenu {
+   height:40px;
+   background:#fff;
+   width: 1000px;
+   margin: 0 auto;
+   border:1px solid rgba(41, 39, 39, 0.31);
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+.buddyexpressdesk-topmenu a{
+	color:#999;
+	text-decoration:none;
+	font-weight:bold;
+}
+.buddyexpressdesk-topmenu li{
+	display:inline;
+}
+.buddyexpressdesk-topmenu .link {
+	display: inline;
+	cursor:pointer;
+    padding: 12px;
+	border-right: 1px solid rgba(41, 39, 39, 0.31);	
+}
+
+.buddyexpressdesk-topmenu .link:hover {
+	background:#F7F7F7;
+	color:#000;
+}
+.buddyexpressdesk-topmenu .inner{
+    padding: 10px;
+}
+.buddyexpressdesk-container {
+   border: 1px solid rgba(41, 39, 39, 0.31);
+   width: 1000px;
+   margin: 0 auto;
+   background:#fff;
+   min-height:400px;
+   border-radius:10px;
+   margin-top: 10px;
+}
+.buddyexpressdesk-title {
+	border-bottom:2px solid #D1D1D1;
+	margin-left: 25px;
+    margin-right: 25px;
+}
+.buddyexpressdesk-title h1{
+	color:#7F7F7F;
+	margin-bottom: 5px;
+    margin-left: 10px;
+ }
+ .buddyexpressdesk-newarticle {
+	margin-left: 25px;
+    margin-right: 25px;
+	margin-top:10px;
+ }
+input[type=text], input[type=password] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #eee;
+  width: 400px; 
+  height: 30px;
+  padding: 10px;
+  font-weight:bold;
+  color:#999;
+}
+.buddyexpressdesk-button-submit {
+	background: #8B8B8B;
+	display: block;
+	color:#fff;
+	font-weight:bold;
+	margin: 10px 0;
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	padding: 5px 0;
+	width: 100px;
+	outline: none;
+	-webkit-box-shadow: inset 0px 2px 3px 0px rgba(18, 16, 11, 0.13);
+	-moz-box-shadow: inset 0px 2px 3px 0px rgba(18, 16, 11, 0.13);
+	box-shadow: inset 0px 2px 3px 0px rgba(18, 16, 11, 0.13); 
+	cursor:pointer;
+
+ }
+.buddyexpressdesk-button-submit:hover {
+ 	border: 2px solid #a3a3a3;
+}
+.buddyexpressdesk-button-submit:focus {
+ 	border: 4px solid #a3a3a3;
+}
+input[type=text]:focus,input[type=password]:focus , textarea:focus {
+  box-shadow: 0 0 5px rgb(202, 202, 202);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  padding: 10px;
+  border: 1px solid rgb(202, 202, 202);
+  font-weight:bold;
+  color:#999;
+}
+fieldset {
+	border:none;
+}
+.buddyexpressdesk-button-delete {
+	    background:url('./../images/delete.jpg') no-repeat;
+		width:29px;
+		height:29px;
+}
+.buddyexpressdesk-button-edit {
+	    background:url('./../images/edit.jpg') no-repeat;
+		width:29px;
+		height:29px;
+}
+.buddyexpressdesk-button-add {
+	    background:url('./../images/add.jpg') no-repeat;
+		width:29px;
+		height:29px;
+}
+.buddyexpressdesk-button-active {
+	    background:url('./../images/active.png') no-repeat;
+		width:29px;
+		height:29px;
+}
+
+.buddyexpressdesk-button-enable {
+	    background:url('./../images/enable.png') no-repeat;
+		width:29px;
+		height:29px;
+}
+.buddyexpressdesk-button-disable {
+	    background:url('./../images/disable.png') no-repeat;
+		width:29px;
+		height:29px;
+}
+.article-lists{
+min-height: 300px;
+border: 1px solid #CCC;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+.article-lists {
+	padding:10px;
+}
+.article h1{
+font-size: 13px;
+font-weight: 600;
+color: #428BCA;
+text-decoration: none;
+}
+.article {
+border-bottom: 1px solid #EEE;	
+}
+.article p{
+margin-top: -5px;	
+}
+.article .icon {
+	display:inline-block;
+	padding: 2px;
+}
+.article .settings {
+float: right;
+margin-top: -40px;
+}
+.article .settings a{
+	text-decoration:none;
+}
+
+.button-nav-default {
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.button-nav {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+text-decoration:none;
+cursor:pointer;
+font-size: 14px;
+font-weight: bold;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+border: 1px solid rgba(0, 0, 0, 0.38);;
+border-radius: 4px;
+color:#333;
+}
+.button-nav:active {
+	background:#E6E6E6;
+}
+
+.buddyexpressdesk_articles-count p{
+       color: #999;
+	   font-weight:bold;
+}
+.buddyexpressdesk_articles-count .title{
+	font-size: 100px;
+    color: #999;
+}
+.buddyexpressdesk-message-error {
+padding: 20px;
+margin-left: 40px;
+background: #FFDEDE;
+color: #BE0000;
+font-weight: bold;
+margin: 10px;
+border: 1px solid #BE0000;
+border-radius: 5px;	
+}
+.buddyexpressdesk-message-success {
+padding: 20px;
+margin-left: 40px;
+background: #DFEDC0;
+color: #3F5A04;
+font-weight: bold;
+margin: 10px;
+border: 1px solid #3F5A04;
+border-radius: 5px;	
+}
+.buddyexpressdesk-message-system {
+padding: 20px;
+margin-left: 40px;
+background: #E8F6FF;
+color: #488FB9;
+font-weight: bold;
+margin: 10px;
+border: 1px solid #B8E2FB;
+border-radius: 5px;
+}
+.buddyexpressdesk-topbar .links a{
+	color: #FFF;
+text-decoration: none;
+}
