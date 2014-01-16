@@ -67,7 +67,11 @@ function buddyexpressdesk_fetch_views($layout, $params = array()){
 global $VIEW;
 if(isset($VIEW->register[$layout]) && !empty($VIEW->register[$layout])){
 foreach($VIEW->register[$layout] as $file){
-	$fetch[] = buddyexpressdesk_view(str_replace('.php', '',$file), $params);
+	if(!function_exists($file)){
+	   $fetch[] = buddyexpressdesk_view(str_replace('.php', '',$file), $params);
+	} else {
+			   $fetch[] = call_user_func($file, buddyexpressdesk_get_context());
+	}
   }   
 return implode('', $fetch);  
 }
@@ -110,6 +114,19 @@ function buddyexpressdesk_is_context($context){
 return false;	
 }
 /**
+* Get a current context;
+* @last edit: $arsalanshah
+* @Reason: Initial;
+* 
+*/
+function buddyexpressdesk_get_context(){
+	global $VIEW;	
+	if(isset($VIEW->context)){
+	return $VIEW->context;	
+	}
+return false;	
+}
+/**
 * Register a page handler;
 * @params: $handler = page;
 * @params: $function = function which handles page;
@@ -139,6 +156,7 @@ return $pages;
 
 function buddyexpressdesk_load_page($handler, $page){
 global $BuddyexpressDesk;
+buddyexpressdesk_add_context($handler);
 $page = explode('/', $page);
 if(isset($BuddyexpressDesk->page) 
 		 && isset($BuddyexpressDesk->page[$handler]) 
