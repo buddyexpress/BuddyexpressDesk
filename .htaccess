@@ -1,0 +1,24 @@
+# Buddyexpress Desk
+#
+# @package   Bdesk
+# @author    Buddyexpress Core Team <admin@buddyexpress.net
+# @copyright 2009-2014 BUDDYEXPRESS NETWORKS.
+# @license   Buddyexpress Public License  
+# @link      http://labs.buddyexpress.net/bdesk.b
+
+Options -Indexes
+Options +FollowSymLinks
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^action\/([A-Za-z0-9\_\-\/]+)$ system/action.php?action=$1&%{QUERY_STRING} [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([A-Za-z0-9\_\-]+)$ index.php?h=$1 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([A-Za-z0-9\_\-]+)\/(.*)$ index.php?h=$1&p=$2 [QSA,L]
+
+</IfModule>
+
