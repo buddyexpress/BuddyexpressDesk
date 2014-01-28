@@ -39,7 +39,7 @@ $english = array(
                  'admin:article:error' => 'Something went wrong please try again later',
                  'admin:article:edited' => 'Article sucessfully edited',
 				 'admin:article:edit:error' => "Cannot able to edit article please try again and make sure all fields are filled.",
-                 
+                 'admin:com:settings' => "Components Settings",
 				 'logout' => 'Logout',
 				 
 				 'site:article:view' => 'Article View',
@@ -65,8 +65,11 @@ $english = array(
 				 
 				 'lang:changed' => 'Language has been changed.',
 				 'lang:change:error' => 'Cannot change language',
-                 'admin:settings' => 'Settings',
-	
+                 
+				 'admin:settings' => 'Global Settings',
+	             'admin:com:config' => 'Configure Components',
+				 'admin:com:no' => 'There is no component for settings',
+				 
                  "aa" => "Afar",
 	             "ab" => "Abkhazian",
              	 "af" => "Afrikaans",
