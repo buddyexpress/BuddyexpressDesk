@@ -69,10 +69,9 @@ if(!empty($com) && is_dir(buddyexpressdesk_route()->com.$com)){
 	* @last edit: $arsalanshah
     * @Reason: Initial;
 	*/
-	$ENABLE->statement("SELECT * 
-					    FROM bdesk_components 
-					    WHERE (com_id='$com');"
-					   );
+	$ENABLE->statement("SELECT * FROM bdesk_components 
+			    WHERE (com_id='$com');"
+			  );
 	$ENABLE->execute();
 	$CHECK = $ENABLE->fetch();
 	/**
@@ -83,9 +82,9 @@ if(!empty($com) && is_dir(buddyexpressdesk_route()->com.$com)){
     if(isset($CHECK['active']) && $CHECK['active'] == 0){
 	$ENABLE = new BDESK_DB;	
 	$ENABLE->statement("UPDATE bdesk_components 
-			           SET active='1' 
-					   WHERE (com_id='$com');"
-					   );
+			    SET active='1' 
+			    WHERE (com_id='$com');"
+			  );
 	$ENABLE->execute();
 	return true;
 	} 
@@ -97,9 +96,9 @@ if(!empty($com) && is_dir(buddyexpressdesk_route()->com.$com)){
     * @Reason: Initial;
 	*/
 	$ENABLE->statement("INSERT INTO `bdesk_components` 
-					   (`com_id`, `active`) 
-		        VALUES ('$com', '1')"
-				);
+			  (`com_id`, `active`) 
+		          VALUES ('$com', '1')"
+			  );
 	$ENABLE->execute();
 	return true;
 	}
@@ -117,8 +116,8 @@ public function CHECK($com = NULL){
 if(!empty($com)){	
 	$ENABLE = new BDESK_DB;
 	$ENABLE->statement("SELECT * FROM bdesk_components 
-					   WHERE (com_id='$com')"
-					   );
+			    WHERE (com_id='$com')"
+			  );
 	$ENABLE->execute();
 	$CHECK = $ENABLE->fetch();
 	if(isset($CHECK['active']) && $CHECK['active'] == 1){
@@ -141,8 +140,8 @@ public function DISABLE($com = NULL){
 if(!empty($com)){	
 	$DISABLE = new BDESK_DB;
 	$DISABLE->statement("UPDATE bdesk_components 
-						SET active='0' WHERE (com_id='$com')"
-						);
+			    SET active='0' WHERE (com_id='$com')"
+			   );
 	$DISABLE->execute();
 	return true;
 }
@@ -157,10 +156,9 @@ return false;
 */
 public function getActive(){
 	$GET = new BDESK_DB;
-    $GET->statement("SELECT * 
-					FROM bdesk_components 
-					WHERE (active=1);"
-					);
+    $GET->statement("SELECT * FROM bdesk_components 
+		    WHERE (active=1);"
+	  	   );
 	$GET->execute();
 	$GET = $GET->fetch(true);
 	if($GET){
@@ -264,10 +262,9 @@ public static function SaveSettings($params = array()){
 	  exit;	
 	}
 	$GET = new BDESK_DB;
-	$GET->statement("SELECT * 
-					FROM bdesk_components_settings 
+	$GET->statement("SELECT * FROM bdesk_components_settings 
 		            WHERE (com_id='$com' AND field='$field')"
-					);
+		       );
 	$GET->execute();
 	$GET = $GET->fetch();
 	
@@ -279,9 +276,9 @@ public static function SaveSettings($params = array()){
 	if(empty($GET)){
 	$SAVE = new BDESK_DB;
 	$SAVE->statement("INSERT INTO bdesk_components_settings 
-					 (`com_id`, `field`, `value`) 
+		                 (`com_id`, `field`, `value`) 
 			  VALUES ('$com', '$field', '$value');"
-			   );
+			 );
 	$SAVE->execute();
 	} 
 	/**
@@ -290,11 +287,11 @@ public static function SaveSettings($params = array()){
 	* @lastupdat: $arsalanshah
 	*/
 	elseif(!empty($GET['field'])){
-    $SET = new BDESK_DB;
-	$SET->statement("UPDATE bdesk_components_settings 
-					SET com_id='$com' , field='$field', value='$value' 
-				  WHERE(com_id='$com' AND field='$field');"
-				  );
+        $SET = new BDESK_DB;
+ 	$SET->statement("UPDATE bdesk_components_settings 
+		        SET com_id='$com' , field='$field', value='$value' 
+			WHERE(com_id='$com' AND field='$field');"
+		       );
 	$SET->execute();		
 	}
 }
@@ -310,10 +307,9 @@ public static function getSettings($com, $field){
 	  exit;	
 	}
 	$GET = new BDESK_DB;
-	$GET->statement("SELECT * 
-					FROM bdesk_components_settings 
-		            WHERE (com_id='$com' AND field='$field')"
-					);
+	$GET->statement("SELECT * FROM bdesk_components_settings 
+		         WHERE (com_id='$com' AND field='$field')"
+	      	       );
 	$GET->execute();
 	$GET = $GET->fetch();
 	if(!empty($GET)){
