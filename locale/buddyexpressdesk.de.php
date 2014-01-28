@@ -65,6 +65,9 @@ $de = array(
 		  'lang:change:error' => 'Sprache kann nicht geändert werden',
           'admin:settings' => 'Einstellungen',
 		  
+		  'admin:settings' => 'Globale Einstellungen',
+	      'admin:com:config' => 'Konfigurieren Sie Komponenten',
+		  'admin:com:no' => 'Es gibt keine Komponente für die Einstellungen',
 
           'aa' => 'Afar',
           'ab' => 'Abchasisch',
