@@ -117,3 +117,7 @@ function get_user_by_uid($uid){
 	}
 return false;	
 }
+
+function buddyexpressdesk_register_settings($name, $file_func){	
+    	BUDDYEXPRESS_DESK_COM::registerSettings($name, $file_func);
+}
