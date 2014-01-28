@@ -70,7 +70,7 @@ foreach($VIEW->register[$layout] as $file){
 	if(!function_exists($file)){
 	   $fetch[] = buddyexpressdesk_view(str_replace('.php', '',$file), $params);
 	} else {
-			   $fetch[] = call_user_func($file, buddyexpressdesk_get_context());
+			   $fetch[] = call_user_func($file, buddyexpressdesk_get_context(), $params, alternate_get_url());
 	}
   }   
 return implode('', $fetch);  
