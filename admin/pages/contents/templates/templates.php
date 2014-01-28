@@ -9,6 +9,9 @@
  * @link      http://labs.buddyexpress.net/bdesk.b
  */
 
+/**
+* Line 22: active to disable
+*/
 $template = new BUDDYEXPRESS_DESK_TEMPLATE; 
 echo '<div class="article-lists">';
 
@@ -16,7 +19,7 @@ foreach($template->getList() as $coms){
       $component = $template->getTEMPLATE($coms);
         
 		if($template->getActive() == $coms){
-           $class = 'active';
+           $class = 'disable';
            $action = '#';
           }
          else {
