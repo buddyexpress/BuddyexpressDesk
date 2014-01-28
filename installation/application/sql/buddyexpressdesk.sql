@@ -54,11 +54,12 @@ INSERT INTO `bdesk_components` (`id`, `com_id`, `active`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `bdesk_components_settings` (
-  `id` bigint(20) NOT NULL,
-  `com_id` text CHARACTER SET utf8 NOT NULL,
-  `field` text CHARACTER SET utf8 NOT NULL,
-  `value` text CHARACTER SET utf8 NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `com_id` text NOT NULL,
+  `field` text NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
