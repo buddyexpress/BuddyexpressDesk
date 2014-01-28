@@ -184,6 +184,12 @@ fieldset {
 		width:29px;
 		height:29px;
 }
+
+.buddyexpressdesk-button-settings {
+	    background:url('./../images/settings.png') no-repeat;
+		width:29px;
+		height:29px;
+}
 .buddyexpressdesk-button-disable {
 	    background:url('./../images/disable.png') no-repeat;
 		width:29px;
