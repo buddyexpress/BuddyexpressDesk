@@ -44,7 +44,7 @@ function buddyexpressdesk_action($action){
 	             }
       } 
        else { 
-    	echo 'Action Not Found';
+        echo  page_404();
         exit();
       }
 }
