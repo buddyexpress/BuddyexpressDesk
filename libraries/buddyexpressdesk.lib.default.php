@@ -107,6 +107,32 @@ function buddyexpressdesk_admin_pagehandler($index){
 	    echo buddyexpressdesk_view(buddyexpressdesk_route()->admin.'pages/site/settings');
 	break;
 	
+	case 'com_settings':
+	   global $BuddyexpressDesk;
+
+       if(isset($index[1]) 
+					   && isset($BuddyexpressDesk->settings) 
+					   && array_key_exists($index[1], $BuddyexpressDesk->settings)){
+		$title = buddyexpressdesk_print("admin:com:settings:{$index[1]}");
+		$contents = BUDDYEXPRESS_DESK_COM::getForm($BuddyexpressDesk->settings[$index[1]]);
+		$content = array(
+				 'contents' => $contents
+		 );
+		$layout = buddyexpressdesk_layout_view('article', $content);
+        echo buddyexpressdesk_view_page($title, $layout,'administrator');
+		
+	   } 
+	   else {
+		$title = buddyexpressdesk_print('admin:com:config');
+		$contents = buddyexpressdesk_view(buddyexpressdesk_route()->admin.'pages/contents/components/components_settings');
+        $content = array(
+				 'contents' =>  $contents
+			);
+		$layout = buddyexpressdesk_layout_view('article', $content);
+        echo buddyexpressdesk_view_page($title, $layout,'administrator');   
+	   }
+	break;
+	
 	default:
       echo  page_404();
     break;
@@ -128,20 +154,23 @@ function buddyexpressdesk_article_pagehandler($article){
 	   header("Location: $page_index");
 	}
 	switch($page){		
-    case 'view':
-    if(isset($article[1]) && !empty($article[1]) && is_numeric($article[1])){
-	 $data = buddyexpressdesk_get_article($article[1]);	
-	 if(!empty($data['id'])){
-     echo buddyexpressdesk_view(buddyexpressdesk_route()->pages.'articles/view', array('article' => $data));
-	 }
-	 else {
-    	echo  page_404();
-	 }
-	 }
+        case 'view':
+             if(isset($article[1]) 
+					  && !empty($article[1]) 
+					  && is_numeric($article[1])){
+	            $data = buddyexpressdesk_get_article($article[1]);	
+	            if(!empty($data['id'])){
+                echo buddyexpressdesk_view(buddyexpressdesk_route()->pages.'articles/view', array('article' => $data));
+	            }
+	            else {
+    	           echo  page_404();
+	             }
+	          }
     break;
-	 case 'all':
-     echo buddyexpressdesk_view(buddyexpressdesk_route()->pages.'articles/all');
+	     case 'all':
+         echo buddyexpressdesk_view(buddyexpressdesk_route()->pages.'articles/all');
     break;
+	
 	default:
     	echo  page_404();
     break;
@@ -206,6 +235,8 @@ buddyexpress_register_menu_link('com', 'admin:com', buddyexpressdesk_site_url().
 buddyexpress_register_menu_link('template', 'admin:templates', buddyexpressdesk_site_url().'administrator/templates', 'admin');
 buddyexpress_register_menu_link('site_account', 'admin:account', buddyexpressdesk_site_url().'administrator/account', 'admin');
 buddyexpress_register_menu_link('settings', 'admin:settings', buddyexpressdesk_site_url().'administrator/settings', 'admin');
+buddyexpress_register_menu_link('com_settings', 'admin:com:settings', buddyexpressdesk_site_url().'administrator/com_settings', 'admin');
+
 
 buddyexpressdesk_register_language('en', buddyexpressdesk_route()->locale.'buddyexpressdesk.en.php');
 buddyexpressdesk_register_language('de', buddyexpressdesk_route()->locale.'buddyexpressdesk.de.php');
