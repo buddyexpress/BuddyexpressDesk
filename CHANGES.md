@@ -1,7 +1,5 @@
-BuddyexpressDesk 1.1 
+BuddyexpressDesk 1.2-DEV
 
 Api Changes:
 
-* Added Componenet Settings Future
-* Active template icon changed (admin section)
-* Added 404 for forms actions
+* Allow to embed pictures in post, is added to editor
