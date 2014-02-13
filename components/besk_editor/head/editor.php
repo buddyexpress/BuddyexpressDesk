@@ -10,4 +10,13 @@
  */
 ?>
 <script src="<?php echo buddyexpressdesk_site_url();?>vendors/tinymce/tinymce.min.js"></script>
-<script>tinymce.init({selector:'textarea',max_height: 200,min_height: 160,height : 180,plugins: "code"});</script>   
+<script>
+
+tinymce.init({
+   toolbar: "bold italic underline alignleft aligncenter alignright bullist numlist image media link unlink bdesk_photo emoticons autoresize fullscreen insertdatetime print spellchecker preview",
+   selector: 'textarea',
+   plugins : "code image media link bdesk_photo emoticons fullscreen insertdatetime print spellchecker preview",
+ 
+});
+    </script>   
+    
