@@ -16,6 +16,10 @@
 <title><?php echo $title; ?></title>
 <?php echo buddyexpressdesk_fetch_views('BuddyexpressDesk/page/admin/head'); ?>
 <link rel="shortcut icon" href="<?php echo buddyexpressdesk_site_url();?>favicon.ico" />
+<script type="text/javascript">
+   <?php echo buddyexpressdesk_fetch_views('BuddyexpressDesk/page/admin/head/js'); ?>
+   
+</script>
 </head>
 
 <body>
