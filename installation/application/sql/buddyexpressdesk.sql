@@ -12,7 +12,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `bdesk_articles` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `owner_id` bigint(20) NOT NULL,
-  `article` text CHARACTER SET utf8 NOT NULL,
+  `article` longtext CHARACTER SET utf8 NOT NULL,
   `time` text CHARACTER SET utf8 NOT NULL,
   `title` text CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `bdesk_components_settings` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `com_id` text NOT NULL,
   `field` text NOT NULL,
-  `value` text NOT NULL,
+  `value` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
