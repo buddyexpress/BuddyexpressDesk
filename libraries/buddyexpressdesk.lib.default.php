@@ -133,11 +133,50 @@ function buddyexpressdesk_admin_pagehandler($index){
 	   }
 	break;
 	
+	case 'image_upload':
+
+   		$title = buddyexpressdesk_print('admin:image:upload');
+		$contents = buddyexpressdesk_view(buddyexpressdesk_route()->admin.'pages/contents/image/upload');
+        $content = array(
+				 'contents' =>  $contents
+			);
+		$layout = buddyexpressdesk_layout_view('article', $content);
+        echo buddyexpressdesk_view_page($title, $layout,'administrator');   
+	break;
+	
 	default:
       echo  page_404();
     break;
 
 	}
+}
+
+function buddyexpressdesk_image_pagehandler($image){
+	$page = $image[0];
+	switch($page){		
+        case 'view':
+             if(isset($image[1]) 
+					  && !empty($image[1]) 
+					  && is_numeric($image[1])){
+	            $data = BDESK_FILE::get($image[1]);	
+	            if(!empty($data['id']) && !empty($data['mime']) && $data['name'] == $image[2]){
+                      header("Content-Type: {$data['mime']}"); 
+					  $file = BDESK_FILE::STORE();
+					  $memie = BDESK_FILE::MIME_IMAGE();
+					  echo file_get_contents($file.$data['store'].'.'.$memie[$data['mime']]);
+	            }
+	            else {
+    	           echo  page_404();
+	             }
+	          }
+    break;
+
+	default:
+    	echo  page_404();
+    break;
+
+	}
+	
 }
 /**
 * Register a page handler for article;
@@ -177,7 +216,15 @@ function buddyexpressdesk_article_pagehandler($article){
 
 	}
 }
-
+function init_jquery($context, $params = false, $url){
+	 $baseurl = buddyexpressdesk_site_url();
+	 $init = buddyexpressdesk_js($baseurl.'vendors/jquery/jquery-1.6.4.min.js');
+     return $init;
+}
+function js_buddyexpressdesk($context, $params = false, $url){
+      $baseurl = buddyexpressdesk_site_url();
+      return buddyexpressdesk_js($baseurl.'javascript/buddyexpressdesk.js');
+}
 /**
 * Register a actions for forms;
 * @actions: 
@@ -197,6 +244,8 @@ buddyexpressdesk_register_action('com_disable', buddyexpressdesk_route()->action
 buddyexpressdesk_register_action('template_enable', buddyexpressdesk_route()->actions.'templates/enable.php');
 buddyexpressdesk_register_action('sitesettings', buddyexpressdesk_route()->actions.'site/settings.php');
 buddyexpressdesk_register_action('setlang', buddyexpressdesk_route()->actions.'site/setlang.php');
+buddyexpressdesk_register_action('image/upload', buddyexpressdesk_route()->actions.'image/upload.php');
+buddyexpressdesk_register_action('image/delete', buddyexpressdesk_route()->actions.'image/delete.php');
 
 }
 
@@ -210,7 +259,7 @@ buddyexpressdesk_register_action('setlang', buddyexpressdesk_route()->actions.'s
 */
 buddyexpressdesk_register_page('index', 'buddyexpressdesk_index_pagehandler');
 buddyexpressdesk_register_page('article', 'buddyexpressdesk_article_pagehandler');
-
+buddyexpressdesk_register_page('image', 'buddyexpressdesk_image_pagehandler');
 if(admin_loggedin()){
      buddyexpressdesk_register_page('administrator', 'buddyexpressdesk_admin_pagehandler');
 }
@@ -236,7 +285,12 @@ buddyexpress_register_menu_link('template', 'admin:templates', buddyexpressdesk_
 buddyexpress_register_menu_link('site_account', 'admin:account', buddyexpressdesk_site_url().'administrator/account', 'admin');
 buddyexpress_register_menu_link('settings', 'admin:settings', buddyexpressdesk_site_url().'administrator/settings', 'admin');
 buddyexpress_register_menu_link('com_settings', 'admin:com:settings', buddyexpressdesk_site_url().'administrator/com_settings', 'admin');
+buddyexpress_register_menu_link('custom:image', 'admin:image:upload', buddyexpressdesk_site_url().'administrator/image_upload', 'admin');
 
 
 buddyexpressdesk_register_language('en', buddyexpressdesk_route()->locale.'buddyexpressdesk.en.php');
 buddyexpressdesk_register_language('de', buddyexpressdesk_route()->locale.'buddyexpressdesk.de.php');
+
+
+buddyexpressdesk_register_view('BuddyexpressDesk/page/admin/head', 'init_jquery');
+buddyexpressdesk_register_view('BuddyexpressDesk/page/admin/head', 'js_buddyexpressdesk');
