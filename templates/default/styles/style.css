@@ -265,9 +265,10 @@ margin: 20px;
 border-radius: 5px;
 border: 2px solid #EEE;	
 padding: 20px;
+overflow:hidden;
 }
 .layout-article h2 {
-		color:#428BCA;
+	color:#428BCA;
 	font-size: 15px;
 }
 
@@ -354,4 +355,14 @@ color:#333;
 .besk-footer-label{
 	color: #428BCA;
 text-decoration: none;
+}
+.article-view-owner {
+	font-size: 12px;
+	color: #4E4E4E;
+	float:right;
+}
+.article-view-owner-small {
+   font-size: 10.5px;
+    color: #4E4E4E;
+	float:right;
 }
