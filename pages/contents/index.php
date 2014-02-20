@@ -16,7 +16,7 @@ $owner = get_user_by_uid($article['owner_id']);
 echo    '<div class="buddyexpressdesk-page-articles">';
 echo '<h2><a href="'.buddyexpressdesk_site_url().'article/view/'.$article['id'].'/'.$title.'">'.$article['title'].'</a></h2>';
 echo  '<p>'.sttl(generateArticle($article['article']), 500).'</p>';
-echo '<span style="font-size: 10.5px;"> Posted by: '.$owner['name'].' '.$article['time'].'</span></div>';
+echo '<div class="article-view-owner-small"> Posted by: '.$owner['name'].' '.$article['time'].'</div><br/></div>';
 
 	}
 }
