@@ -77,7 +77,12 @@ if(filter_var($email, FILTER_SANITIZE_EMAIL)){
 }
 return false;
 }
-
+/**
+* Save account settings;
+* @params: $email = email of a user who is trying to login;
+* @params:  $password = password of user in plain text;
+* @last edit: $arsalanshah
+*/
 function save_settings_account($email, $newemail, $oldpassword, $password){
 if(!empty($email) && !empty($oldpassword) && !empty($password)){
 	$SAVE = new BDESK_DB;
@@ -99,7 +104,13 @@ if(!empty($email) && !empty($oldpassword) && !empty($password)){
 	}
 return false;	
 }
-
+/**
+* Get user by email
+* @params: $email = email of a user;
+* @last edit: $arsalanshah
+* @reason: Initial;
+* 
+*/
 function user($email){
 	if(!empty($email)){
 	$GET = new BDESK_DB;
@@ -108,6 +119,13 @@ function user($email){
 	return $GET->fetch();
 	}
 }
+/**
+* Get user by user id
+* @params: $uid = id of user in database;
+* @last edit: $arsalanshah
+* @reason: Initial;
+* 
+*/
 function get_user_by_uid($uid){
 	if(!empty($uid)){
 	$GET = new BDESK_DB;
@@ -118,6 +136,13 @@ function get_user_by_uid($uid){
 return false;	
 }
 
+/**
+* Register settings page for component
+* @params: $name = valid name of component;
+* @last edit: $arsalanshah
+* @reason: Initial;
+* 
+*/
 function buddyexpressdesk_register_settings($name, $file_func){	
     	BUDDYEXPRESS_DESK_COM::registerSettings($name, $file_func);
 }
