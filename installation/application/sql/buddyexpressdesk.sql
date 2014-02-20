@@ -1,5 +1,5 @@
 -- BSERVER
--- version 2.0.1
+-- version 2.0.9
 -- http://www.buddyexpress.net
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -60,6 +60,20 @@ CREATE TABLE IF NOT EXISTS `bdesk_components_settings` (
   `value` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bdesk_custom_photos`
+--
+
+CREATE TABLE IF NOT EXISTS `bdesk_custom_photos` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `store` text NOT NULL,
+  `name` text NOT NULL,
+  `mime` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
