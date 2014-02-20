@@ -69,6 +69,8 @@ $english = array(
 				 'admin:settings' => 'Global Settings',
 	             'admin:com:config' => 'Configure Components',
 				 'admin:com:no' => 'There is no component for settings',
+				  
+				 'admin:image:upload' => 'Image Upload',
 				 
                  "aa" => "Afar",
 	             "ab" => "Abkhazian",

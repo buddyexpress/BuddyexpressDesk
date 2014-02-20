@@ -69,6 +69,9 @@ $de = array(
 	      'admin:com:config' => 'Konfigurieren Sie Komponenten',
 		  'admin:com:no' => 'Es gibt keine Komponente für die Einstellungen',
 
+		   'admin:image:upload' => 'Bild hochladen',
+           'admin:com:settings' => 'Komponenten Einstellungen',
+		   
           'aa' => 'Afar',
           'ab' => 'Abchasisch',
           'af' => 'Afrikaans',
