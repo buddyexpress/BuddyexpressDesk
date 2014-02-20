@@ -10,5 +10,5 @@
  */
 
 $BuddyexpressDesk->classes = array(
-									 'db', 'articles',  'Components', 'Template', 'lists'
+									 'db', 'articles',  'Components', 'Template', 'lists', 'file'
 								);
