@@ -14,8 +14,8 @@ $title_text = sttl(strip_tags(htmlspecialchars_decode($article['title'])), 250);
       <h2> <a href="<?php echo buddyexpressdesk_site_url()?>article/view/<?php echo $article['id'];?>/<?php echo strtolower($title);?>"><?php echo $title_text; ?></a></h2>
       <p><?php echo $text;?>
        </p>
-              <span style="font-size: 10.5px;"> Posted by: <?php echo $owner['name']; ?>  <?php echo $article['time'];?> </span>
-
+              <div class="article-view-owner-small"> Posted by: <?php echo $owner['name']; ?>  <?php echo $article['time'];?> </div>
+         <br/>
       </div>
     <?php
 }
