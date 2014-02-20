@@ -19,6 +19,11 @@ RewriteRule ^([A-Za-z0-9\_\-]+)$ index.php?h=$1 [QSA,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([A-Za-z0-9\_\-]+)\/(.*)$ index.php?h=$1&p=$2 [QSA,L]
-
+</IfModule>
+<IfModule mod_php5.c>
+	php_value memory_limit 64M
+	php_value register_globals 0
+	php_value post_max_size 8388608
+	php_value upload_max_filesize 5242880
 </IfModule>
 
