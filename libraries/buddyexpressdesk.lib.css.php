@@ -16,8 +16,17 @@
 */ 
 function buddyexpressdesk_css($path){
 if(isset($path) && !empty($path)){
-    $style ='<link rel="stylesheet" href="'.$path.'" type="text/css"/>';
+    $style ='
+	<link rel="stylesheet" href="'.$path.'" type="text/css"/>';
 	return $style;
   }
 	
+}
+
+function buddyexpressdesk_js($path) {
+if(isset($path) && !empty($path)){
+    $style ='
+	<script type="text/javascript" src="'.$path.'"></script>';
+	return $style;
+  }
 }
