@@ -296,3 +296,15 @@ border-radius: 5px;
 	color: #FFF;
 text-decoration: none;
 }
+.bdesk-admin-images-url{
+background: #EEE;
+padding: 10px;
+border: 1px solid #CCC;
+height: 30px;
+width: 850px;
+overflow: hidden;
+}
+.bdesk-admin-images-url input {
+width: 835px;
+padding: 4px;
+}
