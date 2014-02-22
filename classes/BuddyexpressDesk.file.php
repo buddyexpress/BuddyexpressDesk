@@ -15,7 +15,19 @@ public static function STORE(){
   return  buddyexpressdesk_route()->www.'uploads/';	
 }
 public function MAXSIZE(){
-  return ini_get('post_max_size');	
+   $val =  ini_get('post_max_size');
+   $val = trim($val);
+    $last = strtolower($val[strlen($val)-1]);
+    switch($last) {
+        case 'g':
+            $val *= 1024;
+        case 'm':
+            $val *= 1024;
+        case 'k':
+            $val *= 1024;
+    }
+
+    return $val;
 }
 public static function MIME_IMAGE(){
   	$formats = array(
