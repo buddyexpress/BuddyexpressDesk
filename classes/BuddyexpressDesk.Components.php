@@ -252,14 +252,14 @@ if(!empty($form) && is_callable($form)){
 * 
 */
 public static function SaveSettings($params = array()){
-	if(!isset($params['com']) || isset($params['field'])){
-	 exit;	
+	if(!isset($params['com']) || !isset($params['field'])){
+		return false;
 	}
 	$com = $params['com'];
 	$field = $params['field'];
 	$value = $params['value'];
 	if(empty($com) || empty($field)){
-	  exit;	
+	 return false;
 	}
 	$GET = new BDESK_DB;
 	$GET->statement("SELECT * FROM bdesk_components_settings 
@@ -280,6 +280,7 @@ public static function SaveSettings($params = array()){
 			  VALUES ('$com', '$field', '$value');"
 			 );
 	$SAVE->execute();
+	return true;
 	} 
 	/**
 	* Update if settings exisits
@@ -289,11 +290,13 @@ public static function SaveSettings($params = array()){
 	elseif(!empty($GET['field'])){
         $SET = new BDESK_DB;
  	$SET->statement("UPDATE bdesk_components_settings 
-		        SET com_id='$com' , field='$field', value='$value' 
-			WHERE(com_id='$com' AND field='$field');"
+		        	SET com_id='$com' , field='$field', value='$value' 
+					WHERE(com_id='$com' AND field='$field');"
 		       );
-	$SET->execute();		
+	$SET->execute();
+	return true;
 	}
+	return false;
 }
 /**
 * BuddyDesk Save settings for component
